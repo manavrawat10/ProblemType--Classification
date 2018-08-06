@@ -1,12 +1,7 @@
 ProblemClass-Classification
 ===========================
 
-Problem Class Classification will classify the description accordingly. Right now I have 5 classification in my training set. Those are listed below - 
-1. Availability 
-2. Performance
-3. Capacity
-4. Compliance
-5. Backup
+Problem Class Classification will classify the description accordingly. Right now I have 5 classification in my training set.
 
 This engine is deployed using Docker container service. It is desinged with Flask framework so that anyone can integrate it using APIs.
 
@@ -41,6 +36,6 @@ Once training is successful, classification is performed using the following get
 
 For example:
 
-    p10.114.220.111:8500/problemclass/text="Host is Unavailable"
+    10.114.220.111:8500/problemclass/text="Host is Unavailable"
     > {"Classification":"Availability","confidence":"99.7845157"}
 
