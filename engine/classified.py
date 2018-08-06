@@ -24,4 +24,4 @@ def train():
     return ("Successfully Trained")
 
 if __name__ == '__main__':
-   app.run(debug = True,host = '0.0.0.0',port = 8600)
+   app.run(debug = True,host = '0.0.0.0',port = 8500)
