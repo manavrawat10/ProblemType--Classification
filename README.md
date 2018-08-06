@@ -1,4 +1,5 @@
-# ProblemClass-Classification
+ProblemClass-Classification
+===========================
 
 Problem Class Classification will classify the description accordingly. Right now I have 5 classification in my training set. Those are listed below - 
 1. Availability 
@@ -18,31 +19,28 @@ The utility must first be 'trained' using large numbers of pre-classified docume
 Training
 --------
 
-To train the utility, use the following command:
+To train the utility, replace the training file and run the following the get API:
 
-    python bayes.py learn <doctype> <file> <count>
+    <server IP>:8500/train
 
-+ The *doctype* argument can be any non-empty value - this is just the name you have chosen for the type of document that you are showing to the classifier
-+ The *file* argument indicates the location of the file containing the training data that you wish to use
-+ The *count* argument is a numeric value indicating the number of separate documents contained in the training data file
+For example my server IP is 10.114.220.111
 
-For example:
+    10.114.220.111:8500/train
+    > Successfully Trained
 
-    python bayes.py learn spam all_my_spam.txt 10000
-    python bayes.py learn ham inbox.txt 10000
+It will return saying successfully trained. 
 
 Classification
 --------------
 
-Once training is complete, classification is performed using this command:
+Once training is successful, classification is performed using the following get API:
 
-    python bayes.py classify <file> <doctype> <doctype>
+    <server IP>:8500/problemclass/text="<description>"
 
-+ The *file* argument indicates the location of the file containing the document to be classified
-+ The two *doctype* arguments are the names of the document types against which the input file will be compared
++ The *text* argument is the description for which you want to get the classified result.
 
 For example:
 
-    python bayes.py classify nigerian_finance_email.txt spam ham
-    > Probability that document is spam rather than ham is 0.98
+    p10.114.220.111:8500/problemclass/text="Host is Unavailable"
+    > {"Classification":"Availability","confidence":"99.7845157"}
 
