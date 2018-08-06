@@ -5,6 +5,21 @@ Problem Class Classification will classify the description accordingly. Right no
 
 This engine is deployed using Docker container service. It is desinged with Flask framework so that anyone can integrate it using APIs.
 
+Run this engine
+===============
+
+Clone the git or download the content.
+
+Create Docker image
+-------------------
+
+    docker build -t <image name> .
+    docker images
+
+Deploy Container
+----------------
+    docker run -name <docker name> -d -p 8500:8500 <image name>
+
 Naive Bayesian Classifier
 =========================
 This is an implementation of a Naive Bayesian Classifier written in Python. The utility uses statistical methods to classify documents, based on the words that appear within them. A common application for this type of software is in email spam filters.
